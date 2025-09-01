@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nama Programmer — Portfolio Profesional</title>
+    <meta name="description" content="Portfolio seorang programmer profesional: full-stack, arsitek solusi, open-source contributor, dan pembicara teknis." />
+    <meta property="og:title" content="Nama Programmer — Portfolio Profesional" />
+    <meta property="og:description" content="Portfolio: proyek, pengalaman, blog, dan kontak." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="https://via.placeholder.com/32" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      :root{--bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+      body{font-family:var(--bs-body-font-family);}
+      .hero{min-height:60vh;display:flex;align-items:center}
+      .card-project{transition:transform .2s;}
+      .card-project:hover{transform:translateY(-6px)}
+      .theme-toggle{cursor:pointer}
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">NamaProgrammer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
+            <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Semua Proyek</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+            <li class="nav-item ms-2">
+              <button id="themeToggle" class="btn btn-outline-secondary btn-sm theme-toggle" title="Toggle theme"><i class="bi bi-moon-fill"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero bg-body-secondary">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1 class="display-6 fw-bold">Halo, saya Nama Programmer</h1>
+            <p class="lead text-muted">Senior Full-Stack Engineer — membangun sistem skalabel, kontribusi open-source, dan memimpin tim teknis untuk deliver produk berdampak.</p>
+            <p>
+              <a class="btn btn-primary me-2" href="projects.html">Lihat Proyek</a>
+              <a class="btn btn-outline-primary" href="#contact">Hire Me</a>
+            </p>
+            <div class="mt-4">
+              <span class="badge bg-success">JavaScript</span>
+              <span class="badge bg-info text-dark">TypeScript</span>
+              <span class="badge bg-secondary">Python</span>
+              <span class="badge bg-warning text-dark">AWS</span>
+              <span class="badge bg-dark">Docker</span>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img src="https://via.placeholder.com/320" alt="avatar" class="rounded-circle img-fluid shadow-sm" style="max-width:240px">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+
+        <!-- About & Skills -->
+        <section id="about" class="mb-5">
+          <div class="row">
+            <div class="col-lg-7">
+              <h2 class="h4">Tentang Saya</h2>
+              <p>Saya fokus pada arsitektur aplikasi, API design, dan optimasi performa. Berpengalaman memimpin tim 6-12 engineer dan merancang roadmap produk teknis.</p>
+
+              <h3 class="h6 mt-4">Pengalaman Singkat</h3>
+              <ul>
+                <li>Lead Engineer — Perusahaan Tech (2021 — Sekarang)</li>
+                <li>Senior Software Engineer — Startup (2018 — 2021)</li>
+                <li>Software Engineer — Konsultan (2015 — 2018)</li>
+              </ul>
+
+              <a class="btn btn-outline-secondary btn-sm" href="#resume" download>Unduh Resume</a>
+            </div>
+            <div class="col-lg-5">
+              <h3 class="h6">Keahlian Teknis</h3>
+              <div class="mb-2"><small class="text-muted">Backend — arsitektur & performa</small>
+                <div class="progress" style="height:10px"><div class="progress-bar bg-primary" role="progressbar" style="width:90%"></div></div>
+              </div>
+              <div class="mb-2"><small class="text-muted">Frontend — UX & maintainable code</small>
+                <div class="progress" style="height:10px"><div class="progress-bar bg-success" role="progressbar" style="width:85%"></div></div>
+              </div>
+              <div class="mb-2"><small class="text-muted">Cloud & DevOps</small>
+                <div class="progress" style="height:10px"><div class="progress-bar bg-warning" role="progressbar" style="width:80%"></div></div>
+              </div>
+              <div class="mb-2"><small class="text-muted">Testing & QA</small>
+                <div class="progress" style="height:10px"><div class="progress-bar bg-info" role="progressbar" style="width:75%"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects preview -->
+        <section id="projects" class="mb-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h5">Proyek Pilihan</h2>
+            <a href="projects.html" class="small">Lihat semua</a>
+          </div>
+
+          <div class="row g-4">
+            <!-- Project card 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card card-project h-100">
+                <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="project-1">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Platform e-Commerce Skalabel</h5>
+                  <p class="card-text text-muted">Microservices, Event-driven, CI/CD, autoscaling.</p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-primary">Go</span>
+                      <span class="badge bg-secondary">Kubernetes</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Platform e-Commerce Skalabel" data-desc="Arsitektur microservices dengan event-sourcing dan deployment otomatis." data-tech="Go, Kubernetes, Kafka">Detail</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project card 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card card-project h-100">
+                <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="project-2">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Dashboard Analitik Real-time</h5>
+                  <p class="card-text text-muted">Streaming data, visualisasi, dan alerts.</p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-info text-dark">TypeScript</span>
+                      <span class="badge bg-warning text-dark">AWS</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Dashboard Analitik Real-time" data-desc="Pipeline streaming dan dashboard interaktif untuk monitoring KPI." data-tech="TypeScript, AWS, WebSocket">Detail</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project card 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card card-project h-100">
+                <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="project-3">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Open-source Library</h5>
+                  <p class="card-text text-muted">Library yang mempermudah integrasi API dan testing.</p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-dark">Python</span>
+                      <span class="badge bg-secondary">PyPI</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Open-source Library" data-desc="Library dengan dokumentasi lengkap dan integrasi CI untuk quality." data-tech="Python, PyTest">Detail</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Blog preview -->
+        <section id="blog" class="mb-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h5">Tulisan Terbaru</h2>
+            <a href="#blog" class="small">Arsip</a>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <article class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Membangun Microservices yang Terukur</h5>
+                  <p class="card-text text-muted">Ringkasan tentang event-driven, contract testing, dan strategi deploy.</p>
+                  <a href="#" class="stretched-link small">Baca selengkapnya</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Testing pada Skala Besar</h5>
+                  <p class="card-text text-muted">Pendekatan end-to-end dan pengukuran coverage yang efektif.</p>
+                  <a href="#" class="stretched-link small">Baca selengkapnya</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mb-5">
+          <h3 class="h5 mb-3">Testimonial</h3>
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card p-3">
+                  <blockquote class="blockquote mb-0">
+                    <p>"Memimpin migrasi ke arsitektur microservices dengan hasil yang melebihi target KPI."</p>
+                    <footer class="blockquote-footer">CTO, Perusahaan A</footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card p-3">
+                  <blockquote class="blockquote mb-0">
+                    <p>"Kode yang bersih, dokumentasi lengkap, dan sangat mentor bagi tim."</p>
+                    <footer class="blockquote-footer">Manager Produk, Startup B</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section id="contact" class="bg-body-tertiary p-4 rounded">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="mb-1">Siap mulai proyek baru?</h4>
+              <p class="mb-0 text-muted">Kirim pesan singkat dan saya akan menghubungi Anda dalam 48 jam kerja.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <a class="btn btn-primary" href="contact.html">Kontak</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container d-flex justify-content-between">
+        <small class="text-muted">© 2025 Nama Programmer — All rights reserved.</small>
+        <div>
+          <a href="#" class="text-muted me-2"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-muted me-2"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-muted"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel">Detail Proyek</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p id="projectModalDesc"></p>
+            <p id="projectModalTech"></p>
+            <div class="mt-3">
+              <a id="projectModalRepo" href="#" class="btn btn-sm btn-outline-secondary me-2">Repo</a>
+              <a id="projectModalDemo" href="#" class="btn btn-sm btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Theme toggle (dark/light) stored in localStorage
+      (function(){
+        const btn = document.getElementById('themeToggle');
+        const icon = btn.querySelector('i');
+        const current = localStorage.getItem('site-theme') || 'light';
+        if(current==='dark'){document.documentElement.classList.add('theme-dark'); document.body.classList.add('bg-dark','text-light'); icon.className='bi bi-sun-fill'}
+        btn.addEventListener('click', ()=>{
+          const isDark = document.documentElement.classList.toggle('theme-dark');
+          document.body.classList.toggle('bg-dark', isDark);
+          document.body.classList.toggle('text-light', isDark);
+          icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+          localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
+        });
+      })();
+
+      // Fill project modal with data attributes
+      var projectModal = document.getElementById('projectModal');
+      projectModal && projectModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var title = button.getAttribute('data-title');
+        var desc = button.getAttribute('data-desc');
+        var tech = button.getAttribute('data-tech');
+        var modalTitle = projectModal.querySelector('.modal-title');
+        modalTitle.textContent = title;
+        projectModal.querySelector('#projectModalDesc').textContent = desc;
+        projectModal.querySelector('#projectModalTech').textContent = 'Tech: ' + tech;
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e){
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+        });
+      });
+
+      // Basic form validation placeholder (if contact form present)
+      document.addEventListener('submit', function(e){
+        var form = e.target;
+        if(form && form.matches('.needs-validation')){
+          if(!form.checkValidity()){
+            e.preventDefault(); e.stopPropagation();
+            form.classList.add('was-validated');
+          } else {
+            // Normally submit via AJAX or server; here we just show a toast/alert
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim (demo).');
+            form.reset(); form.classList.remove('was-validated');
+          }
+        }
+      }, true);
+    </script>
+  </body>
+</html>

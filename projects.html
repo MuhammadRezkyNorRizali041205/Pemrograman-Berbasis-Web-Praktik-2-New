@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proyek — Nama Programmer</title>
+    <meta name="description" content="Daftar proyek dan studi kasus teknis." />
+    <link rel="icon" href="https://via.placeholder.com/32" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>body{font-family:'Inter',system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">NamaProgrammer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain2"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMain2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#projects">Pilihan</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h4">Semua Proyek & Studi Kasus</h1>
+        <div>
+          <input id="searchBox" class="form-control form-control-sm" placeholder="Cari proyek (tech, nama)..." style="min-width:220px">
+        </div>
+      </div>
+
+      <div id="projectsGrid" class="row g-4">
+        <!-- Repeated project cards (for demo, 6 items) -->
+      </div>
+
+      <!-- Project detail modal -->
+      <div class="modal fade" id="projectDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Judul Proyek</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div id="projectDetailContent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="py-4 bg-light">
+      <div class="container d-flex justify-content-between">
+        <small class="text-muted">© 2025 Nama Programmer</small>
+        <div>
+          <a href="#" class="text-muted me-2"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Demo dataset
+      const PROJECTS = [
+        {id:1,title:'Platform e-Commerce Skalabel',tags:['go','kubernetes'],summary:'Microservices, event-driven',desc:'Studi kasus migrasi monolith ke microservices dengan event sourcing, deployment otomatis, dan monitoring.'},
+        {id:2,title:'Dashboard Analitik Real-time',tags:['typescript','aws'],summary:'Streaming & monitoring',desc:'Pipeline streaming, transformasi data, dan visualisasi dashboard real-time.'},
+        {id:3,title:'Open-source Library',tags:['python','pypi'],summary:'Library untuk integrasi API',desc:'Library kecil namun lengkap untuk mempermudah integrasi dan test otomatis.'},
+        {id:4,title:'Platform Edukasi',tags:['react','node'],summary:'LMS & content delivery',desc:'Platform pembelajaran dengan personalization dan analytics.'},
+        {id:5,title:'Micro-frontend PWA',tags:['pwa','micro-frontend'],summary:'Komposisi UI modular',desc:'Arsitektur micro-frontend untuk tim front-end besar.'},
+        {id:6,title:'Automasi Infrastruktur',tags:['terraform','aws'],summary:'IaC & pipelines',desc:'Automasi provisioning, policy-as-code, dan compliance.'}
+      ];
+
+      const grid = document.getElementById('projectsGrid');
+      function renderProjects(list){
+        grid.innerHTML='';
+        list.forEach(p=>{
+          const col = document.createElement('div'); col.className='col-md-6 col-lg-4';
+          col.innerHTML = `
+            <div class="card h-100">
+              <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="${p.title}">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${p.title}</h5>
+                <p class="card-text text-muted">${p.summary}</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div>${p.tags.map(t=>`<span class="badge bg-secondary me-1">${t}</span>`).join('')}</div>
+                  <button class="btn btn-sm btn-outline-primary" data-id="${p.id}">Lihat</button>
+                </div>
+              </div>
+            </div>
+          `;
+          grid.appendChild(col);
+        });
+      }
+
+      renderProjects(PROJECTS);
+
+      // Click handler for detail
+      grid.addEventListener('click', function(e){
+        const btn = e.target.closest('button[data-id]');
+        if(!btn) return;
+        const id = +btn.getAttribute('data-id');
+        const p = PROJECTS.find(x=>x.id===id);
+        if(p){
+          const modal = new bootstrap.Modal(document.getElementById('projectDetailModal'));
+          document.querySelector('#projectDetailModal .modal-title').textContent = p.title;
+          document.getElementById('projectDetailContent').innerHTML = `<p>${p.desc}</p><p><strong>Tech:</strong> ${p.tags.join(', ')}</p><p><a href="#" class="btn btn-sm btn-outline-secondary me-2">Repo</a><a href="#" class="btn btn-sm btn-primary">Live</a></p>`;
+          modal.show();
+        }
+      });
+
+      // Search/filter
+      const searchBox = document.getElementById('searchBox');
+      searchBox.addEventListener('input', function(){
+        const q = this.value.trim().toLowerCase();
+        const filtered = PROJECTS.filter(p=> (p.title+p.summary+p.tags.join(' ')).toLowerCase().includes(q));
+        renderProjects(filtered);
+      });
+    </script>
+  </body>
+</html>
